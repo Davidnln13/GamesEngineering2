@@ -5,10 +5,10 @@ class Command
 {
 public:
 	virtual ~Command() {}
-	virtual void Execute(GameActor& actor) = 0;
-	virtual void RedoCommand() = 0;
-	virtual void UndoCommand() = 0;
-	virtual void DoCommand() = 0;
+	virtual void execute(GameActor& actor) = 0;
+	virtual void redoCommand() = 0;
+	virtual void undoCommand() = 0;
+	virtual void doCommand() = 0;
 protected:
 	Command() {}
 };
