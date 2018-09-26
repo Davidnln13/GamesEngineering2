@@ -15,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -24,12 +27,15 @@
     <ClCompile Include="MacroCommand.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameActor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Command.h">
+    <ClInclude Include="FireCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputHandler.h">
+    <ClInclude Include="GameActor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MacroCommand.h">
@@ -38,7 +44,7 @@
     <ClInclude Include="JumpCommand.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FireCommand.h">
+    <ClInclude Include="Command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CrouchCommand.h">

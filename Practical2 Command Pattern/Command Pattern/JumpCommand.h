@@ -3,5 +3,8 @@
 class JumpCommand : public Command
 {
 public:
-	virtual void execute() { jump(); }
+	virtual void execute(GameActor& actor)
+	{
+		actor.jump();
+	}
 };
