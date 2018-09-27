@@ -5,6 +5,7 @@
 #include "Command.h"
 #include "InputHandler.h"
 #include "GameActor.h"
+#include "JumpCommand.h"
 
 /*
    Author: David Nolan
@@ -63,7 +64,7 @@ int main( int argc, char* args[] )
 		}
 	}
 	InputHandler inputHandler;
-	GameActor* actor;
+	GameActor actor;	
 	std::string s;
 	while (close == false)
 	{
@@ -74,7 +75,7 @@ int main( int argc, char* args[] )
 		Command* command = inputHandler.handleInput(s);
 		if (command)
 		{
-			command->Execute(actor);
+			command->execute(actor);
 		}
 	}
 

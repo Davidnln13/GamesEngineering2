@@ -138,6 +138,7 @@
     <ClInclude Include="CrouchCommand.h" />
     <ClInclude Include="FireCommand.h" />
     <ClInclude Include="GameActor.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="JumpCommand.h" />
     <ClInclude Include="MacroCommand.h" />
     <ClInclude Include="MeleeCommand.h" />
