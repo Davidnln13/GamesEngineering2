@@ -6,6 +6,7 @@
 #include "InputHandler.h"
 #include "GameActor.h"
 #include "JumpCommand.h"
+#include "FireCommand.h"
 
 /*
    Author: David Nolan
@@ -64,18 +65,27 @@ int main( int argc, char* args[] )
 		}
 	}
 	InputHandler inputHandler;
-	GameActor actor;	
-	std::string s;
+	GameActor* actor = new GameActor();	
+	SDL_Event e;
+	JumpCommand* jump = new JumpCommand(actor);
+
+	inputHandler.bindCommand("Jump", jump);
 	while (close == false)
 	{
-		std::cout << "What would you like your character to do? Available commands: Jump, Fire, Crouch, Shield, Melee" << std::endl;
-		std::cin >> s;
-		if (s == "QUIT")
-			close = true;
-		Command* command = inputHandler.handleInput(s);
-		if (command)
+		while (SDL_PollEvent(&e) != 0)
 		{
-			command->execute(actor);
+			if (e.type == SDL_QUIT)
+			{
+				close = true;
+			}
+			else if (e.type = SDL_KEYUP)
+			{
+				Command* command = inputHandler.handleInput(e);
+				if (command)
+				{
+					command->execute();
+				}
+			}
 		}
 	}
 

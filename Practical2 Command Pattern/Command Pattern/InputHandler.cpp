@@ -1,14 +1,27 @@
 #include "InputHandler.h"
 
-Command* InputHandler::handleInput(std::string s)
+Command* InputHandler::handleInput(SDL_Event& e)
 {
-	std::transform(s.begin(), s.end(), s.begin(), ::toupper);
-
-	if (s == "JUMP") 
-		return jump;
-	else if (s == "FIRE") 
-		return fire;
-
+	switch (e.key.keysym.sym)
+	{
+	case SDLK_SPACE:
+		jump->execute();
+		break;
+	case SDLK_f:
+		fire->execute();
+		break;
+	}
 	return NULL;
+}
+void InputHandler::bindCommand(std::string key, Command * c)
+{
+	if (key == "Jump")
+	{
+		jump = c;
+	}
+	if (key == "f")
+	{
+		fire = c;
+	}
 }
 	
