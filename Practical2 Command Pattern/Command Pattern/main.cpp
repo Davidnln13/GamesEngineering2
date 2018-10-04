@@ -94,7 +94,7 @@ int main( int argc, char* args[] )
 			{
 				close = true;
 			}
-			else if (e.type = SDL_KEYDOWN)
+			else if (SDL_KEYDOWN == e.type)
 			{
 				//command = to the pointer returned from handleinput
 				inputHandler.handleInput(e);
