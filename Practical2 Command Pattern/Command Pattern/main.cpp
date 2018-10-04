@@ -7,6 +7,9 @@
 #include "GameActor.h"
 #include "JumpCommand.h"
 #include "FireCommand.h"
+#include "CrouchCommand.h"
+#include "MeleeCommand.h"
+#include "ShieldCommand.h"
 
 /*
    Author: David Nolan
@@ -65,11 +68,24 @@ int main( int argc, char* args[] )
 		}
 	}
 	InputHandler inputHandler;
+	//player that performs the commands
 	GameActor* actor = new GameActor();	
+	//event to check for key press
 	SDL_Event e;
+	//setting up concrete commands 
 	JumpCommand* jump = new JumpCommand(actor);
-
-	inputHandler.bindCommand("Jump", jump);
+	FireCommand* fire = new FireCommand(actor);
+	CrouchCommand* crouch = new CrouchCommand(actor);
+	MeleeCommand* melee = new MeleeCommand(actor);
+	ShieldCommand* shield = new ShieldCommand(actor);
+	//binding keys to commands 
+	inputHandler.bindCommand("space", jump);
+	inputHandler.bindCommand("f", fire);
+	inputHandler.bindCommand("c", crouch);
+	inputHandler.bindCommand("m", melee);
+	inputHandler.bindCommand("s", shield);
+	
+	std::cout << "Jump-Space, F-Fire, C-Crouch, M-Melee, S-Shield, U-Undo" << std::endl;
 	while (close == false)
 	{
 		while (SDL_PollEvent(&e) != 0)
@@ -78,13 +94,10 @@ int main( int argc, char* args[] )
 			{
 				close = true;
 			}
-			else if (e.type = SDL_KEYUP)
+			else if (e.type = SDL_KEYDOWN)
 			{
-				Command* command = inputHandler.handleInput(e);
-				if (command)
-				{
-					command->execute();
-				}
+				//command = to the pointer returned from handleinput
+				inputHandler.handleInput(e);
 			}
 		}
 	}
