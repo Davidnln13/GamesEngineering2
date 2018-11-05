@@ -99,11 +99,6 @@ int main( int argc, char* args[] )
 				inputHandler.handleInput(e);
 			}
 		}
-		//update surface
-		SDL_UpdateWindowSurface(window);
-
-		//draw GameActor(rectangle)
-		actor->draw(screenSurface);		
 	}
 
 	//Destroy window

@@ -16,6 +16,4 @@ public:
 	void undoCrouch();
 	void undoMelee();
 	void undoShield();
-	//change rectangle colour
-	void draw(SDL_Surface* surface);
 };

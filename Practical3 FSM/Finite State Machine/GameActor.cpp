@@ -49,8 +49,3 @@ void GameActor::undoShield()
 {
 	std::cout << "Undo Shield" << std::endl;
 }
-
-void GameActor::draw(SDL_Surface * surface)
-{
-}
-
