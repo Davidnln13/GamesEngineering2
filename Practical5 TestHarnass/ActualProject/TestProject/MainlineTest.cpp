@@ -8,7 +8,7 @@ int main()
 	Production p;
 
 	std::vector<int> nums;
-	
+	std::cout << "Test Application" << std::endl << std::endl;
 	nums = p.input();
 
 	int n = 0;

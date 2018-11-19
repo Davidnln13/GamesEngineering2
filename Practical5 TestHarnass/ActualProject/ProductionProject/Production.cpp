@@ -8,7 +8,7 @@ std::vector<int> Production::input()
 {
 	std::vector<int> nums;
 	bool end = false;
-
+	
 	std::cout << "Please enter 6 different numbers between 1 and 46 after each number press enter. Enter 0 to exit" << std::endl << std::endl;
 	for (int i = 0; i < 6; i++)
 	{
