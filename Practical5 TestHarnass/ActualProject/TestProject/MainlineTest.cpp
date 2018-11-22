@@ -32,7 +32,7 @@ int main()
 	{
 		for (int j = i + 1; j < 6; j++)
 		{
-			assert(nums[i] != nums[j]);
+			assert(nums[i] == nums[j]);
 		}
 	}
 	

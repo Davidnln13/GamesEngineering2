@@ -77,18 +77,18 @@ void Production::checkInRange(std::vector<int> nums)
 }
 void Production::checkIfRepeated(std::vector<int> nums)
 {
-	int n = 0;
+	bool n = true;
 	for (int i = 0; i < 6; i++)
 	{
 		for (int j = i + 1; j < 6; j++)
 		{
-			if (nums[i] != nums[j])
+			if (nums[i] == nums[j])
 			{
-				n++;
+				n = false;
 			}
 		}
 	}
-	if (!n == 15)
+	if (n==false)
 	{
 		std::cout << "Some elements repeated" << std::endl;
 	}
