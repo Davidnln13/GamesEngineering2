@@ -10,6 +10,16 @@ int buf =0, p = 0, c = 0;
 //function forward declerations
 void producer(int aArr[], int n);
 void consumer(int bArr[], int n);
+
+class Game
+{
+public:
+	void run(int n)
+	{
+		std::cout << "Hi [" << n << "]" << std::endl;
+	}
+};
+
 //entry point
 int main()
 {
