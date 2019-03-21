@@ -50,19 +50,19 @@ void CS(int i)
 {
 	while (true)
 	{
-		for (int j = 0; j < num; j++)
+		for (int j = 0; j < num-1; j++)
 		{
 			in[i] = j;
 			last[j] = i;
-			for (int k = 0; k < num; k++)
+			for (int k = 0; k < num-1; k++)
 			{
-				if (i != k)
-				{
-					while (in[k] >= in[i] && last[j] == i)
+				//if (i != k)
+				//{
+					while (k!=i && last[j] == i)
 					{
 						continue;
 					}
-				}
+				//}
 			}
 		}
 		std::cout << "Critical Section: " << i << std::endl;
